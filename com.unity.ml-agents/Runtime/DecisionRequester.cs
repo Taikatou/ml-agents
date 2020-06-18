@@ -42,7 +42,7 @@ namespace Unity.MLAgents
         [NonSerialized]
         Agent m_Agent;
 
-        public bool allowDecisions;
+        public bool allowDecisions = true;
 
         internal void Awake()
         {
@@ -64,7 +64,7 @@ namespace Unity.MLAgents
         /// decision, and whether or not it should take actions between decisions.
         /// </summary>
         /// <param name="academyStepCount">The current step count of the academy.</param>
-        void MakeRequests(int academyStepCount)
+        public void MakeRequests(int academyStepCount)
         {
             if (allowDecisions)
             {
@@ -72,7 +72,6 @@ namespace Unity.MLAgents
                 {
                     m_Agent?.RequestDecision();
                 }
-
                 if (TakeActionsBetweenDecisions)
                 {
                     m_Agent?.RequestAction();

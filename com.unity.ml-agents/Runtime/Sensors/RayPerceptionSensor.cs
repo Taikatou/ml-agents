@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Unity.MLAgents.Sensors
@@ -99,7 +100,7 @@ namespace Unity.MLAgents.Sensors
             else
             {
                 // Vector2s here get converted to Vector3s (and back to Vector2s for casting)
-                startPositionLocal = new Vector2();
+                startPositionLocal = new Vector2(0, StartOffset);
                 endPositionLocal = PolarToCartesian2D(RayLength, angle);
             }
 
@@ -331,6 +332,10 @@ namespace Unity.MLAgents.Sensors
                 // Finally, add the observations to the ObservationWriter
                 writer.AddRange(m_Observations);
             }
+
+            // Debug.Log(string.Join(", ", m_Observations));
+            // var output = string.Join(",", m_Observations);
+            // Debug.Log(output);
             return m_Observations.Length;
         }
 

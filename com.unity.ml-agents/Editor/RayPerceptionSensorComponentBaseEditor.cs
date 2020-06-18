@@ -4,7 +4,7 @@ using Unity.MLAgents.Sensors;
 
 namespace Unity.MLAgents.Editor
 {
-    internal class RayPerceptionSensorComponentBaseEditor : UnityEditor.Editor
+    public class RayPerceptionSensorComponentBaseEditor : UnityEditor.Editor
     {
         bool m_RequireSensorUpdate;
 
@@ -13,6 +13,14 @@ namespace Unity.MLAgents.Editor
             var so = serializedObject;
             so.Update();
 
+            AddProperties(so, is3d);
+
+            so.ApplyModifiedProperties();
+            UpdateSensorIfDirty();
+        }
+
+        protected virtual void AddProperties(SerializedObject so, bool is3d)
+        {
             // Drawing the RayPerceptionSensorComponent
             EditorGUI.BeginChangeCheck();
             EditorGUI.indentLevel++;
@@ -55,9 +63,6 @@ namespace Unity.MLAgents.Editor
             {
                 m_RequireSensorUpdate = true;
             }
-
-            so.ApplyModifiedProperties();
-            UpdateSensorIfDirty();
         }
 
         void UpdateSensorIfDirty()
