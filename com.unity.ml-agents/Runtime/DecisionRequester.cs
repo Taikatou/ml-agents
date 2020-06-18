@@ -42,6 +42,8 @@ namespace Unity.MLAgents
         [NonSerialized]
         Agent m_Agent;
 
+        public bool allowDecisions;
+
         internal void Awake()
         {
             m_Agent = gameObject.GetComponent<Agent>();
@@ -64,13 +66,16 @@ namespace Unity.MLAgents
         /// <param name="academyStepCount">The current step count of the academy.</param>
         void MakeRequests(int academyStepCount)
         {
-            if (academyStepCount % DecisionPeriod == 0)
+            if (allowDecisions)
             {
-                m_Agent?.RequestDecision();
-            }
-            if (TakeActionsBetweenDecisions)
-            {
-                m_Agent?.RequestAction();
+                if (academyStepCount % DecisionPeriod == 0)
+                {
+                    m_Agent?.RequestDecision();
+                }
+                if (TakeActionsBetweenDecisions)
+                {
+                    m_Agent?.RequestAction();
+                }
             }
         }
     }
