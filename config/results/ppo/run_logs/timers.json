@@ -1,0 +1,46 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1592481801",
+        "python_version": "3.7.6 (tags/v3.7.6:43364a7ae0, Dec 19 2019, 00:42:30) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "D:\\FirstRelease\\ml-agents\\venv\\Scripts\\mlagents-learn ppo/LevelKoala.yaml",
+        "mlagents_version": "0.18.0.dev0",
+        "mlagents_envs_version": "0.18.0.dev0",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "2.2.0",
+        "end_time_seconds": "1592481804"
+    },
+    "total": 2.2787686999999996,
+    "count": 1,
+    "self": 0.2059194999999998,
+    "children": {
+        "run_training.setup": {
+            "total": 0.023208499999999965,
+            "count": 1,
+            "self": 0.023208499999999965
+        },
+        "TrainerController.start_learning": {
+            "total": 2.0496407,
+            "count": 1,
+            "self": 0.0026468999999993414,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.0460100999999997,
+                    "count": 1,
+                    "self": 2.0460100999999997
+                },
+                "trainer_threads": {
+                    "total": 4.800000000138027e-06,
+                    "count": 1,
+                    "self": 4.800000000138027e-06
+                },
+                "TrainerController._save_model": {
+                    "total": 0.000978900000000671,
+                    "count": 1,
+                    "self": 0.000978900000000671
+                }
+            }
+        }
+    }
+}
