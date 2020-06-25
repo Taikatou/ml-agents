@@ -339,7 +339,7 @@ namespace Unity.MLAgents
     /// This implements the Singleton pattern (solution 4) as described in
     /// https://csharpindepth.com/articles/singleton
     /// </remarks>
-    internal class TimerStack : IDisposable
+    public class TimerStack : IDisposable
     {
         static readonly TimerStack k_Instance = new TimerStack();
 

@@ -203,7 +203,7 @@ namespace Unity.MLAgents.Sensors
     /// <summary>
     /// Debug information for the raycast hits. This is used by the RayPerceptionSensorComponent.
     /// </summary>
-    internal class DebugDisplayInfo
+    public class DebugDisplayInfo
     {
         public struct RayInfo
         {
@@ -392,7 +392,7 @@ namespace Unity.MLAgents.Sensors
         /// <param name="rayIndex"></param>
         /// <param name="debugRayOut"></param>
         /// <returns></returns>
-        internal static RayPerceptionOutput.RayOutput PerceiveSingleRay(
+        public static RayPerceptionOutput.RayOutput PerceiveSingleRay(
             RayPerceptionInput input,
             int rayIndex,
             out DebugDisplayInfo.RayInfo debugRayOut
