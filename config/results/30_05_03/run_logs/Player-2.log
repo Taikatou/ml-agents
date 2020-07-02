@@ -1,0 +1,107 @@
+Mono path[0] = '/Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data/Managed'
+Mono config path = '/Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/MonoBleedingEdge/etc'
+PlayerConnection initialized from /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55120
+Multi-casting "[IP] 192.168.50.83 [Port] 55120 [Flags] 2 [Guid] 433732432 [EditorId] 142148162 [Version] 1048832 [Id] OSXPlayer(conors-iMac.ThePromisedLan2) [Debug] 0 [PackageName] OSXPlayer [ProjectName] topdown-research" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55120]
+PlayerConnection already initialized - listening to [0.0.0.0:55120]
+Initialize engine version: 2019.4.0f1 (0af376155913)
+[Subsystems] Discovering subsystems at path /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.210 seconds
+UnloadTime: 0.691537 ms
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+DC[I]: Simulation SDK v0.0.10-preview.6 Started.
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.Manager:Start() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:316)
+Unity.Simulation.Forward:Start() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:259)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[V]: Manager upload player log: /Users/conor/Documents/ml-agents/config/results/30_05_03/run_logs/Player-2.log
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:382)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[V]: Final uploads completed.
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:396)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[V]: Application quit
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:401)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 700005c55000 -> priority: 1 
+  Thread -> id: 700005ee4000 -> priority: 1 
+  Thread -> id: 700005cd8000 -> priority: 1 
+  Thread -> id: 70000600d000 -> priority: 1 
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/advapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/advapi32
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1593555265904,"processId":2139,"allocatedMemory":106335,"memoryLabels":[{"Permanent":24},{"NewDelete":92984},{"Thread":72},{"Manager":2592},{"GfxDevice":7332},{"Physics":32},{"Serialization":40},{"String":755},{"Sprites":512},{"GI":296},{"CloudService":336},{"VR":2016},{"Subsystems":-656}]}

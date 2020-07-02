@@ -1,0 +1,449 @@
+Mono path[0] = '/Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data/Managed'
+Mono config path = '/Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/MonoBleedingEdge/etc'
+PlayerConnection initialized from /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55422
+Multi-casting "[IP] 192.168.50.83 [Port] 55422 [Flags] 2 [Guid] 2746750219 [EditorId] 142148162 [Version] 1048832 [Id] OSXPlayer(conors-iMac.ThePromisedLan2) [Debug] 0 [PackageName] OSXPlayer [ProjectName] topdown-research" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55422]
+PlayerConnection already initialized - listening to [0.0.0.0:55422]
+Initialize engine version: 2019.4.0f1 (0af376155913)
+[Subsystems] Discovering subsystems at path /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Resources/Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.423 seconds
+UnloadTime: 0.577524 ms
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libcoreclr.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libdl.so
+DC[I]: Simulation SDK v0.0.10-preview.6 Started.
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.Manager:Start() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:316)
+Unity.Simulation.Forward:Start() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:259)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(67.783) Simulation(10.000) Unscaled(68.468) FPS(2.951) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(128.047) Simulation(20.000) Unscaled(128.657) FPS(1.562) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(185.179) Simulation(30.000) Unscaled(185.888) FPS(1.080) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(245.329) Simulation(40.000) Unscaled(245.870) FPS(0.815) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(306.499) Simulation(50.000) Unscaled(307.149) FPS(0.653) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(366.647) Simulation(60.000) Unscaled(367.203) FPS(0.545) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(429.730) Simulation(70.000) Unscaled(430.379) FPS(0.465) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(489.724) Simulation(80.000) Unscaled(490.362) FPS(0.408) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(551.841) Simulation(90.000) Unscaled(552.475) FPS(0.362) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(614.304) Simulation(100.000) Unscaled(614.965) FPS(0.326) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(674.920) Simulation(110.000) Unscaled(675.647) FPS(0.296) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(736.256) Simulation(120.000) Unscaled(736.976) FPS(0.272) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+Winning Team: -1
+Reward: 0
+Reward: 0
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Research.CharacterDesign.Scripts.Environment.<GameOver>d__37:MoveNext() (at /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs:255)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Scripting/Coroutines.cs:17)
+UnityEngine.MonoBehaviour:StartCoroutineManaged2(IEnumerator)
+UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:91)
+Research.CharacterDesign.Scripts.Environment.EnvironmentInstance:Update() (at /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs:221)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs Line: 255)
+
+DC[I]: USim Time (secs) : Wall(797.874) Simulation(130.000) Unscaled(798.431) FPS(0.251) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(857.146) Simulation(140.000) Unscaled(857.845) FPS(0.233) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(920.299) Simulation(150.000) Unscaled(920.947) FPS(0.217) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(983.113) Simulation(160.000) Unscaled(983.815) FPS(0.203) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,042.371) Simulation(170.000) Unscaled(1,043.023) FPS(0.192) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,104.249) Simulation(180.000) Unscaled(1,104.894) FPS(0.181) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,166.132) Simulation(190.000) Unscaled(1,166.737) FPS(0.172) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,225.277) Simulation(200.000) Unscaled(1,225.937) FPS(0.163) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,286.318) Simulation(210.000) Unscaled(1,286.971) FPS(0.155) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,345.640) Simulation(220.000) Unscaled(1,346.351) FPS(0.149) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,404.603) Simulation(230.000) Unscaled(1,405.070) FPS(0.142) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[I]: USim Time (secs) : Wall(1,462.713) Simulation(240.000) Unscaled(1,463.360) FPS(0.137) 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:I(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:95)
+Unity.Simulation.TimeLogger:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/TimeLogger.cs:121)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:349)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+Winning Team: -1
+Reward: 0
+Reward: 0
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Research.CharacterDesign.Scripts.Environment.<GameOver>d__37:MoveNext() (at /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs:255)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Scripting/Coroutines.cs:17)
+UnityEngine.MonoBehaviour:StartCoroutineManaged2(IEnumerator)
+UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator) (at /Users/builduser/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:91)
+Research.CharacterDesign.Scripts.Environment.EnvironmentInstance:Update() (at /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs:221)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Assets/Research/CharacterDesign/Scripts/Environment/EnvironmentInstance.cs Line: 255)
+
+DC[V]: Manager upload player log: /Users/conor/Documents/ml-agents/config/results/30_05_05/run_logs/Player-13.log
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:382)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[V]: Final uploads completed.
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:396)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+DC[V]: Application quit
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unity.Simulation.Log:Write(Level, String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:80)
+Unity.Simulation.Log:V(String, Boolean) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs:135)
+Unity.Simulation.Manager:Update(Single) (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:401)
+Unity.Simulation.Forward:Update() (at /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Manager.cs:263)
+ 
+(Filename: /Users/conor/Documents/top-down-shooter/Library/PackageCache/com.unity.simulation.core@0.0.10-preview.11/Runtime/Log.cs Line: 80)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 70000c410000 -> priority: 1 
+  Thread -> id: 70000c493000 -> priority: 1 
+  Thread -> id: 70000c69f000 -> priority: 1 
+  Thread -> id: 70000c7c8000 -> priority: 1 
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/advapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/advapi32
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.dylib
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.so
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll.bundle
+Fallback handler could not load library /Users/conor/Documents/ml-agents/config/envs/topdown-research.app/Contents/Frameworks/MonoEmbedRuntime/osx/libadvapi32.dll
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1593557977085,"processId":2438,"allocatedMemory":108425,"memoryLabels":[{"Permanent":24},{"NewDelete":94352},{"Thread":72},{"Manager":2616},{"GfxDevice":7332},{"Physics":32},{"Serialization":40},{"String":1117},{"Sprites":512},{"GI":296},{"CloudService":672},{"VR":2016},{"Subsystems":-656}]}

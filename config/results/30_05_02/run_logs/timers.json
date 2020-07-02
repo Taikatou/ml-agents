@@ -1,0 +1,41 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1593555218",
+        "python_version": "3.7.3 (default, Apr 24 2020, 18:51:23) \n[Clang 11.0.3 (clang-1103.0.32.62)]",
+        "command_line_arguments": "/Users/conor/Documents/ml-agents/venv/bin/mlagents-learn ppo/LevelKoala.yaml --env=envs/topdown-research --run-id=30_05_02 --num-envs=10 --no-graphics --resume",
+        "mlagents_version": "0.18.0.dev0",
+        "mlagents_envs_version": "0.18.0.dev0",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "2.2.0",
+        "end_time_seconds": "1593555227"
+    },
+    "total": 8.484596476,
+    "count": 1,
+    "self": 5.801031858,
+    "children": {
+        "run_training.setup": {
+            "total": 0.06402914400000004,
+            "count": 1,
+            "self": 0.06402914400000004
+        },
+        "TrainerController.start_learning": {
+            "total": 2.6195354739999996,
+            "count": 1,
+            "self": 0.2929276009999997,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.326507815,
+                    "count": 1,
+                    "self": 2.326507815
+                },
+                "TrainerController._save_model": {
+                    "total": 0.00010005800000012499,
+                    "count": 1,
+                    "self": 0.00010005800000012499
+                }
+            }
+        }
+    }
+}
