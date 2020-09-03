@@ -1,11 +1,9 @@
 # # Unity ML-Agents Toolkit
-import os
 from typing import Dict, List, Optional
 from collections import defaultdict
 import abc
 import time
 import attr
-from mlagents.model_serialization import SerializationSettings
 from mlagents.trainers.policy.checkpoint_manager import (
     NNCheckpoint,
     NNCheckpointManager,
@@ -15,11 +13,27 @@ from mlagents_envs.timers import timed
 from mlagents.trainers.optimizer import Optimizer
 from mlagents.trainers.buffer import AgentBuffer
 from mlagents.trainers.trainer import Trainer
-from mlagents.trainers.components.reward_signals import RewardSignalResult
+from mlagents.trainers.components.reward_signals import RewardSignalResult, RewardSignal
 from mlagents_envs.timers import hierarchical_timer
+from mlagents_envs.base_env import BehaviorSpec
+from mlagents.trainers.policy.policy import Policy
+from mlagents.trainers.policy.tf_policy import TFPolicy
+from mlagents.trainers.behavior_id_utils import BehaviorIdentifiers
 from mlagents.trainers.agent_processor import AgentManagerQueue
 from mlagents.trainers.trajectory import Trajectory
+from mlagents.trainers.settings import TrainerSettings, FrameworkType
 from mlagents.trainers.stats import StatsPropertyType
+from mlagents.trainers.model_saver.model_saver import BaseModelSaver
+from mlagents.trainers.model_saver.tf_model_saver import TFModelSaver
+from mlagents.trainers.exception import UnityTrainerException
+from mlagents import torch_utils
+
+if torch_utils.is_available():
+    from mlagents.trainers.policy.torch_policy import TorchPolicy
+    from mlagents.trainers.model_saver.torch_model_saver import TorchModelSaver
+else:
+    TorchPolicy = None  # type: ignore
+    TorchSaver = None  # type: ignore
 
 RewardSignalResults = Dict[str, RewardSignalResult]
 
@@ -44,8 +58,19 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
         self._stats_reporter.add_property(
             StatsPropertyType.HYPERPARAMETERS, self.trainer_settings.as_dict()
         )
+        self.framework = self.trainer_settings.framework
+        if self.framework == FrameworkType.PYTORCH and not torch_utils.is_available():
+            raise UnityTrainerException(
+                "To use the experimental PyTorch backend, install the PyTorch Python package first."
+            )
+
+        logger.debug(f"Using framework {self.framework.value}")
+
         self._next_save_step = 0
         self._next_summary_step = 0
+        self.model_saver = self.create_model_saver(
+            self.framework, self.trainer_settings, self.artifact_path, self.load
+        )
 
     def end_episode(self) -> None:
         """
@@ -68,9 +93,16 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
                 self.reward_buffer.appendleft(rewards.get(agent_id, 0))
                 rewards[agent_id] = 0
             else:
-                self.stats_reporter.add_stat(
-                    optimizer.reward_signals[name].stat_name, rewards.get(agent_id, 0)
-                )
+                if isinstance(optimizer.reward_signals[name], RewardSignal):
+                    self.stats_reporter.add_stat(
+                        optimizer.reward_signals[name].stat_name,
+                        rewards.get(agent_id, 0),
+                    )
+                else:
+                    self.stats_reporter.add_stat(
+                        f"Policy/{optimizer.reward_signals[name].name.capitalize()} Reward",
+                        rewards.get(agent_id, 0),
+                    )
                 rewards[agent_id] = 0
 
     def _clear_update_buffer(self) -> None:
@@ -86,6 +118,54 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
         :return: A boolean corresponding to wether or not update_model() can be run
         """
         return False
+
+    def create_policy(
+        self,
+        parsed_behavior_id: BehaviorIdentifiers,
+        behavior_spec: BehaviorSpec,
+        create_graph: bool = False,
+    ) -> Policy:
+        if self.framework == FrameworkType.PYTORCH:
+            return self.create_torch_policy(parsed_behavior_id, behavior_spec)
+        else:
+            return self.create_tf_policy(
+                parsed_behavior_id, behavior_spec, create_graph=create_graph
+            )
+
+    @abc.abstractmethod
+    def create_torch_policy(
+        self, parsed_behavior_id: BehaviorIdentifiers, behavior_spec: BehaviorSpec
+    ) -> TorchPolicy:
+        """
+        Create a Policy object that uses the PyTorch backend.
+        """
+        pass
+
+    @abc.abstractmethod
+    def create_tf_policy(
+        self,
+        parsed_behavior_id: BehaviorIdentifiers,
+        behavior_spec: BehaviorSpec,
+        create_graph: bool = False,
+    ) -> TFPolicy:
+        """
+        Create a Policy object that uses the TensorFlow backend.
+        """
+        pass
+
+    @staticmethod
+    def create_model_saver(
+        framework: str, trainer_settings: TrainerSettings, model_path: str, load: bool
+    ) -> BaseModelSaver:
+        if framework == FrameworkType.PYTORCH:
+            model_saver = TorchModelSaver(  # type: ignore
+                trainer_settings, model_path, load
+            )
+        else:
+            model_saver = TFModelSaver(  # type: ignore
+                trainer_settings, model_path, load
+            )
+        return model_saver
 
     def _policy_mean_reward(self) -> Optional[float]:
         """ Returns the mean episode reward for the current policy. """
@@ -105,14 +185,11 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
             logger.warning(
                 "Trainer has multiple policies, but default behavior only saves the first."
             )
-        policy = list(self.policies.values())[0]
-        model_path = policy.model_path
-        settings = SerializationSettings(model_path, self.brain_name)
-        checkpoint_path = os.path.join(model_path, f"{self.brain_name}-{self.step}")
-        policy.checkpoint(checkpoint_path, settings)
+        checkpoint_path = self.model_saver.save_checkpoint(self.brain_name, self.step)
+        export_ext = "nn" if self.framework == FrameworkType.TENSORFLOW else "onnx"
         new_checkpoint = NNCheckpoint(
             int(self.step),
-            f"{checkpoint_path}.nn",
+            f"{checkpoint_path}.{export_ext}",
             self._policy_mean_reward(),
             time.time(),
         )
@@ -130,13 +207,16 @@ class RLTrainer(Trainer):  # pylint: disable=abstract-method
             logger.warning(
                 "Trainer has multiple policies, but default behavior only saves the first."
             )
-        policy = list(self.policies.values())[0]
-        settings = SerializationSettings(policy.model_path, self.brain_name)
+        elif n_policies == 0:
+            logger.warning("Trainer has no policies, not saving anything.")
+            return
+
         model_checkpoint = self._checkpoint()
+        self.model_saver.copy_final_model(model_checkpoint.file_path)
+        export_ext = "nn" if self.framework == FrameworkType.TENSORFLOW else "onnx"
         final_checkpoint = attr.evolve(
-            model_checkpoint, file_path=f"{policy.model_path}.nn"
+            model_checkpoint, file_path=f"{self.model_saver.model_path}.{export_ext}"
         )
-        policy.save(policy.model_path, settings)
         NNCheckpointManager.track_final_checkpoint(self.brain_name, final_checkpoint)
 
     @abc.abstractmethod

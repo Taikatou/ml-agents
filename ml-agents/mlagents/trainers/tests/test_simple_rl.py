@@ -27,6 +27,7 @@ from mlagents.trainers.settings import (
     RewardSignalType,
     EncoderType,
     ScheduleType,
+    FrameworkType,
 )
 from mlagents.trainers.environment_parameter_manager import EnvironmentParameterManager
 from mlagents_envs.side_channel.environment_parameters_channel import (
@@ -53,6 +54,7 @@ PPO_CONFIG = TrainerSettings(
     summary_freq=500,
     max_steps=3000,
     threaded=False,
+    framework=FrameworkType.TENSORFLOW,
 )
 
 SAC_CONFIG = TrainerSettings(
@@ -74,9 +76,9 @@ SAC_CONFIG = TrainerSettings(
 
 
 # The reward processor is passed as an argument to _check_environment_trains.
-# It is applied to the list pf all final rewards for each brain individually.
+# It is applied to the list of all final rewards for each brain individually.
 # This is so that we can process all final rewards in different ways for different algorithms.
-# Custom reward processors shuld be built within the test function and passed to _check_environment_trains
+# Custom reward processors should be built within the test function and passed to _check_environment_trains
 # Default is average over the last 5 final rewards
 def default_reward_processor(rewards, last_n_rewards=5):
     rewards_to_use = rewards[-last_n_rewards:]
@@ -190,7 +192,7 @@ def test_visual_ppo(num_visual, use_discrete):
 
 
 @pytest.mark.parametrize("num_visual", [1, 2])
-@pytest.mark.parametrize("vis_encode_type", ["resnet", "nature_cnn"])
+@pytest.mark.parametrize("vis_encode_type", ["resnet", "nature_cnn", "match3"])
 def test_visual_advanced_ppo(vis_encode_type, num_visual):
     env = SimpleEnvironment(
         [BRAIN_NAME],
@@ -198,7 +200,7 @@ def test_visual_advanced_ppo(vis_encode_type, num_visual):
         num_visual=num_visual,
         num_vector=0,
         step_size=0.5,
-        vis_obs_size=(36, 36, 3),
+        vis_obs_size=(5, 5, 5) if vis_encode_type == "match3" else (36, 36, 3),
     )
     new_networksettings = attr.evolve(
         SAC_CONFIG.network_settings, vis_encode_type=EncoderType(vis_encode_type)
@@ -269,7 +271,7 @@ def test_visual_sac(num_visual, use_discrete):
 
 
 @pytest.mark.parametrize("num_visual", [1, 2])
-@pytest.mark.parametrize("vis_encode_type", ["resnet", "nature_cnn"])
+@pytest.mark.parametrize("vis_encode_type", ["resnet", "nature_cnn", "match3"])
 def test_visual_advanced_sac(vis_encode_type, num_visual):
     env = SimpleEnvironment(
         [BRAIN_NAME],
@@ -277,7 +279,7 @@ def test_visual_advanced_sac(vis_encode_type, num_visual):
         num_visual=num_visual,
         num_vector=0,
         step_size=0.5,
-        vis_obs_size=(36, 36, 3),
+        vis_obs_size=(5, 5, 5) if vis_encode_type == "match3" else (36, 36, 3),
     )
     new_networksettings = attr.evolve(
         SAC_CONFIG.network_settings, vis_encode_type=EncoderType(vis_encode_type)
@@ -300,7 +302,7 @@ def test_visual_advanced_sac(vis_encode_type, num_visual):
 
 @pytest.mark.parametrize("use_discrete", [True, False])
 def test_recurrent_sac(use_discrete):
-    step_size = 0.2 if use_discrete else 1.0
+    step_size = 0.5 if use_discrete else 0.2
     env = MemoryEnvironment(
         [BRAIN_NAME], use_discrete=use_discrete, step_size=step_size
     )
@@ -389,7 +391,7 @@ def test_simple_asymm_ghost_fails(use_discrete):
         swap_steps=5000,
         team_change=2000,
     )
-    config = attr.evolve(PPO_CONFIG, self_play=self_play_settings, max_steps=2000)
+    config = attr.evolve(PPO_CONFIG, self_play=self_play_settings, max_steps=3000)
     _check_environment_trains(
         env, {BRAIN_NAME: config, brain_name_opp: config}, success_threshold=None
     )

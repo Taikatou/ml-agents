@@ -21,6 +21,7 @@ class Tensor3DShape(NamedTuple):
 
 
 class NormalizerTensors(NamedTuple):
+    init_op: tf.Operation
     update_op: tf.Operation
     steps: tf.Tensor
     running_mean: tf.Tensor
@@ -31,6 +32,7 @@ class ModelUtils:
     # Minimum supported side for each encoder type. If refactoring an encoder, please
     # adjust these also.
     MIN_RESOLUTION_FOR_ENCODER = {
+        EncoderType.MATCH3: 5,
         EncoderType.SIMPLE: 20,
         EncoderType.NATURE_CNN: 36,
         EncoderType.RESNET: 15,
@@ -187,8 +189,8 @@ class ModelUtils:
         :return: A NormalizerTensors tuple that holds running mean, running variance, number of steps,
             and the update operation.
         """
-
         vec_obs_size = vector_obs.shape[1]
+
         steps = tf.get_variable(
             "normalization_steps",
             [],
@@ -210,11 +212,18 @@ class ModelUtils:
             dtype=tf.float32,
             initializer=tf.ones_initializer(),
         )
-        update_normalization = ModelUtils.create_normalizer_update(
+        (
+            initialize_normalization,
+            update_normalization,
+        ) = ModelUtils.create_normalizer_update(
             vector_obs, steps, running_mean, running_variance
         )
         return NormalizerTensors(
-            update_normalization, steps, running_mean, running_variance
+            initialize_normalization,
+            update_normalization,
+            steps,
+            running_mean,
+            running_variance,
         )
 
     @staticmethod
@@ -223,7 +232,7 @@ class ModelUtils:
         steps: tf.Tensor,
         running_mean: tf.Tensor,
         running_variance: tf.Tensor,
-    ) -> tf.Operation:
+    ) -> Tuple[tf.Operation, tf.Operation]:
         """
         Creates the update operation for the normalizer.
         :param vector_input: Vector observation to use for updating the running mean and variance.
@@ -250,7 +259,18 @@ class ModelUtils:
         update_mean = tf.assign(running_mean, new_mean)
         update_variance = tf.assign(running_variance, new_variance)
         update_norm_step = tf.assign(steps, total_new_steps)
-        return tf.group([update_mean, update_variance, update_norm_step])
+        # First mean and variance calculated normally
+        initial_mean, initial_variance = tf.nn.moments(vector_input, axes=[0])
+        initialize_mean = tf.assign(running_mean, initial_mean)
+        # Multiplied by total_new_step because it is divided by total_new_step in the normalization
+        initialize_variance = tf.assign(
+            running_variance,
+            (initial_variance + EPSILON) * tf.cast(total_new_steps, dtype=tf.float32),
+        )
+        return (
+            tf.group([initialize_mean, initialize_variance, update_norm_step]),
+            tf.group([update_mean, update_variance, update_norm_step]),
+        )
 
     @staticmethod
     def create_vector_observation_encoder(
@@ -318,6 +338,53 @@ class ModelUtils:
                 32,
                 kernel_size=[4, 4],
                 strides=[2, 2],
+                activation=tf.nn.elu,
+                reuse=reuse,
+                name="conv_2",
+            )
+            hidden = tf.layers.flatten(conv2)
+
+        with tf.variable_scope(scope + "/" + "flat_encoding"):
+            hidden_flat = ModelUtils.create_vector_observation_encoder(
+                hidden, h_size, activation, num_layers, scope, reuse
+            )
+        return hidden_flat
+
+    @staticmethod
+    def create_match3_visual_observation_encoder(
+        image_input: tf.Tensor,
+        h_size: int,
+        activation: ActivationFunction,
+        num_layers: int,
+        scope: str,
+        reuse: bool,
+    ) -> tf.Tensor:
+        """
+        Builds a CNN with the architecture used by King for Candy Crush. Optimized
+        for grid-shaped boards, such as with Match-3 games.
+        :param image_input: The placeholder for the image input to use.
+        :param h_size: Hidden layer size.
+        :param activation: What type of activation function to use for layers.
+        :param num_layers: number of hidden layers to create.
+        :param scope: The scope of the graph within which to create the ops.
+        :param reuse: Whether to re-use the weights within the same scope.
+        :return: List of hidden layer tensors.
+        """
+        with tf.variable_scope(scope):
+            conv1 = tf.layers.conv2d(
+                image_input,
+                35,
+                kernel_size=[3, 3],
+                strides=[1, 1],
+                activation=tf.nn.elu,
+                reuse=reuse,
+                name="conv_1",
+            )
+            conv2 = tf.layers.conv2d(
+                conv1,
+                144,
+                kernel_size=[3, 3],
+                strides=[1, 1],
                 activation=tf.nn.elu,
                 reuse=reuse,
                 name="conv_2",
@@ -459,6 +526,7 @@ class ModelUtils:
             EncoderType.SIMPLE: ModelUtils.create_visual_observation_encoder,
             EncoderType.NATURE_CNN: ModelUtils.create_nature_cnn_visual_observation_encoder,
             EncoderType.RESNET: ModelUtils.create_resnet_visual_observation_encoder,
+            EncoderType.MATCH3: ModelUtils.create_match3_visual_observation_encoder,
         }
         return ENCODER_FUNCTION_BY_TYPE.get(
             encoder_type, ModelUtils.create_visual_observation_encoder
@@ -494,8 +562,8 @@ class ModelUtils:
         :param action_masks: The mask for the logits. Must be of dimension [None x total_number_of_action]
         :param action_size: A list containing the number of possible actions for each branch
         :return: The action output dimension [batch_size, num_branches], the concatenated
-            normalized probs (after softmax)
-        and the concatenated normalized log probs
+            normalized log_probs (after softmax)
+        and the concatenated normalized log log_probs
         """
         branch_masks = ModelUtils.break_into_branches(action_masks, action_size)
         raw_probs = [

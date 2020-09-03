@@ -11,19 +11,52 @@ and this project adheres to
 ### Major Changes
 #### com.unity.ml-agents (C#)
 #### ml-agents / ml-agents-envs / gym-unity (Python)
-- The minimum supported python version for ml-agents-envs was changed to 3.6.1. (#4244)
+
+### Minor Changes
+
+#### com.unity.ml-agents (C#)
+- Update Barracuda to 1.1.0-preview (#4208)
+- Enabled C# formatting using `dotnet-format`. (#4362)
+- GridSensor was added to the com.unity.ml-agents.extensions package. Thank you
+to Jaden Travnik from Eidos Montreal for the contribution! (#4399)
+#### ml-agents / ml-agents-envs / gym-unity (Python)
+- Experimental PyTorch support has been added. Use `--torch` when running `mlagents-learn`, or add
+`framework: pytorch` to your trainer configuration (under the behavior name) to enable it.
+Note that PyTorch 1.6.0 or greater should be installed to use this feature; see
+[the PyTorch website](https://pytorch.org/) for installation instructions. (#4335)
+- The minimum supported version of TensorFlow was increased to 1.14.0. (#4411)
+- Compressed visual observations with >3 channels are now supported. In
+ISensor.GetCompressedObservation(), this can be done by writing 3 channels at a
+time to a PNG and concatenating the resulting bytes. (#4399)
+- A CNN (`vis_encode_type: match3`) for smaller grids, e.g. board games, has been added.
+(#4434)
+
+### Bug Fixes
+#### com.unity.ml-agents (C#)
+- The package dependencies were updated to include the built-in packages that are used also. (#4384)
+#### ml-agents / ml-agents-envs / gym-unity (Python)
+
+## [1.3.0-preview] - 2020-08-12
+
+### Major Changes
+#### com.unity.ml-agents (C#)
+#### ml-agents / ml-agents-envs / gym-unity (Python)
+- The minimum supported Python version for ml-agents-envs was changed to 3.6.1. (#4244)
 - The interaction between EnvManager and TrainerController was changed; EnvManager.advance() was split into to stages,
 and TrainerController now uses the results from the first stage to handle new behavior names. This change speeds up
 Python training by approximately 5-10%. (#4259)
 
 ### Minor Changes
 #### com.unity.ml-agents (C#)
-#### ml-agents / ml-agents-envs / gym-unity (Python)
 - StatsSideChannel now stores multiple values per key. This means that multiple
 calls to `StatsRecorder.Add()` with the same key in the same step will no
 longer overwrite each other. (#4236)
+#### ml-agents / ml-agents-envs / gym-unity (Python)
+- The versions of `numpy` supported by ml-agents-envs were changed to disallow 1.19.0 or later. This was done to reflect
+a similar change in TensorFlow's requirements. (#4274)
 - Model checkpoints are now also saved as .nn files during training. (#4127)
 - Model checkpoint info is saved in TrainingStatus.json after training is concluded (#4127)
+- CSV statistics writer was removed (#4300).
 
 ### Bug Fixes
 #### com.unity.ml-agents (C#)
@@ -32,6 +65,9 @@ recursively (for example, by an Agent's CollectObservations method).
 Previously, this would result in an infinite loop and cause the editor to hang.
 (#4226)
 #### ml-agents / ml-agents-envs / gym-unity (Python)
+- The algorithm used to normalize observations was introducing NaNs if the initial observations were too large
+due to incorrect initialization. The initialization was fixed and is now the observation means from the
+first trajectory processed. (#4299)
 
 ## [1.2.0-preview] - 2020-07-15
 
