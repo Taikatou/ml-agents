@@ -74,6 +74,9 @@ class TFModelSaver(BaseModelSaver):
         # only on worker-0 if there are multiple workers
         if self.policy and self.policy.rank is not None and self.policy.rank != 0:
             return
+        if self.graph is None:
+            logger.info("No model to export")
+            return
         export_policy_model(
             self.model_path, output_filepath, behavior_name, self.graph, self.sess
         )
@@ -99,6 +102,8 @@ class TFModelSaver(BaseModelSaver):
     def _load_graph(
         self, policy: TFPolicy, model_path: str, reset_global_steps: bool = False
     ) -> None:
+        # This prevents normalizer init up from executing on load
+        policy.first_normalization_update = False
         with policy.graph.as_default():
             logger.info(f"Loading model from {model_path}.")
             ckpt = tf.train.get_checkpoint_state(model_path)
