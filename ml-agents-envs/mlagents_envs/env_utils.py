@@ -27,7 +27,7 @@ def validate_environment_path(env_path: str) -> Optional[str]:
         .replace(".x86", "")
     )
     true_filename = os.path.basename(os.path.normpath(env_path))
-    get_logger(__name__).debug("The true file name is {}".format(true_filename))
+    get_logger(__name__).debug(f"The true file name is {true_filename}")
 
     if not (glob.glob(env_path) or glob.glob(env_path + ".*")):
         return None
@@ -68,6 +68,16 @@ def validate_environment_path(env_path: str) -> Optional[str]:
         candidates = glob.glob(os.path.join(cwd, env_path + ".exe"))
         if len(candidates) == 0:
             candidates = glob.glob(env_path + ".exe")
+        if len(candidates) == 0:
+            # Look for e.g. 3DBall\UnityEnvironment.exe
+            crash_handlers = set(
+                glob.glob(os.path.join(cwd, env_path, "UnityCrashHandler*.exe"))
+            )
+            candidates = [
+                c
+                for c in glob.glob(os.path.join(cwd, env_path, "*.exe"))
+                if c not in crash_handlers
+            ]
         if len(candidates) > 0:
             launch_string = candidates[0]
     return launch_string
@@ -86,7 +96,7 @@ def launch_executable(file_name: str, args: List[str]) -> subprocess.Popen:
             f"Couldn't launch the {file_name} environment. Provided filename does not match any environments."
         )
     else:
-        get_logger(__name__).debug("This is the launch string {}".format(launch_string))
+        get_logger(__name__).debug(f"This is the launch string {launch_string}")
         # Launch Unity environment
         subprocess_args = [launch_string] + args
         try:

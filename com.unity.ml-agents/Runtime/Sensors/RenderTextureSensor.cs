@@ -18,7 +18,7 @@ namespace Unity.MLAgents.Sensors
         /// </summary>
         public SensorCompressionType CompressionType
         {
-            get { return m_CompressionType;  }
+            get { return m_CompressionType; }
             set { m_CompressionType = value; }
         }
 
@@ -75,17 +75,17 @@ namespace Unity.MLAgents.Sensors
             using (TimerStack.Instance.Scoped("RenderTextureSensor.Write"))
             {
                 var texture = ObservationToTexture(m_RenderTexture);
-                var numWritten = Utilities.TextureToTensorProxy(texture, writer, m_Grayscale);
+                var numWritten = writer.WriteTexture(texture, m_Grayscale);
                 DestroyTexture(texture);
                 return numWritten;
             }
         }
 
         /// <inheritdoc/>
-        public void Update() {}
+        public void Update() { }
 
         /// <inheritdoc/>
-        public void Reset() {}
+        public void Reset() { }
 
         /// <inheritdoc/>
         public SensorCompressionType GetCompressionType()

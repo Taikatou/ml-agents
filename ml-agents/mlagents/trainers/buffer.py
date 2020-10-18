@@ -1,6 +1,7 @@
 import numpy as np
 import h5py
 from typing import List, BinaryIO
+import itertools
 
 from mlagents_envs.exception import UnityException
 
@@ -48,7 +49,7 @@ class AgentBuffer(dict):
             Adds a list of np.arrays to the end of the list of np.arrays.
             :param data: The np.array list to append.
             """
-            self += list(np.array(data))
+            self += list(np.array(data, dtype=np.float32))
 
         def set(self, data):
             """
@@ -134,7 +135,7 @@ class AgentBuffer(dict):
         super().__init__()
 
     def __str__(self):
-        return ", ".join(["'{0}' : {1}".format(k, str(self[k])) for k in self.keys()])
+        return ", ".join(["'{}' : {}".format(k, str(self[k])) for k in self.keys()])
 
     def reset_agent(self) -> None:
         """
@@ -217,9 +218,11 @@ class AgentBuffer(dict):
             np.random.randint(num_sequences_in_buffer, size=num_seq_to_sample)
             * sequence_length
         )  # Sample random sequence starts
-        for i in start_idxes:
-            for key in self:
-                mini_batch[key].extend(self[key][i : i + sequence_length])
+        for key in self:
+            mb_list = [self[key][i : i + sequence_length] for i in start_idxes]
+            # See comparison of ways to make a list from a list of lists here:
+            # https://stackoverflow.com/questions/952914/how-to-make-a-flat-list-out-of-list-of-lists
+            mini_batch[key].set(list(itertools.chain.from_iterable(mb_list)))
         return mini_batch
 
     def save_to_file(self, file_object: BinaryIO) -> None:
@@ -275,7 +278,7 @@ class AgentBuffer(dict):
             key_list = list(self.keys())
         if not self.check_length(key_list):
             raise BufferException(
-                "The length of the fields {0} were not of same length".format(key_list)
+                f"The length of the fields {key_list} were not of same length"
             )
         for field_key in key_list:
             target_buffer[field_key].extend(

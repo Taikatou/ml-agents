@@ -56,7 +56,11 @@ class UnityEnvironment(BaseEnv):
     # We follow semantic versioning on the communication version, so existing
     # functionality will work as long the major versions match.
     # This should be changed whenever a change is made to the communication protocol.
-    API_VERSION = "1.0.0"
+    # Revision history:
+    #  * 1.0.0 - initial version
+    #  * 1.1.0 - support concatenated PNGs for compressed observations.
+    #  * 1.2.0 - support compression mapping for stacked compressed observations.
+    API_VERSION = "1.2.0"
 
     # Default port that the editor listens on. If an environment executable
     # isn't specified, this port will be used.
@@ -114,6 +118,8 @@ class UnityEnvironment(BaseEnv):
     def _get_capabilities_proto() -> UnityRLCapabilitiesProto:
         capabilities = UnityRLCapabilitiesProto()
         capabilities.baseRLCapabilities = True
+        capabilities.concatenatedPngObservations = True
+        capabilities.compressedChannelMapping = True
         return capabilities
 
     @staticmethod
@@ -326,8 +332,8 @@ class UnityEnvironment(BaseEnv):
     def _assert_behavior_exists(self, behavior_name: str) -> None:
         if behavior_name not in self._env_specs:
             raise UnityActionException(
-                "The group {0} does not correspond to an existing agent group "
-                "in the environment".format(behavior_name)
+                f"The group {behavior_name} does not correspond to an existing "
+                f"agent group in the environment"
             )
 
     def set_actions(self, behavior_name: BehaviorName, action: np.ndarray) -> None:
@@ -339,9 +345,9 @@ class UnityEnvironment(BaseEnv):
         expected_shape = (len(self._env_state[behavior_name][0]), spec.action_size)
         if action.shape != expected_shape:
             raise UnityActionException(
-                "The behavior {0} needs an input of dimension {1} for "
-                "(<number of agents>, <action size>) but received input of "
-                "dimension {2}".format(behavior_name, expected_shape, action.shape)
+                f"The behavior {behavior_name} needs an input of dimension "
+                f"{expected_shape} for (<number of agents>, <action size>) but "
+                f"received input of dimension {action.shape}"
             )
         if action.dtype != expected_type:
             action = action.astype(expected_type)
@@ -357,10 +363,9 @@ class UnityEnvironment(BaseEnv):
         expected_shape = (spec.action_size,)
         if action.shape != expected_shape:
             raise UnityActionException(
-                f"The Agent {0} with BehaviorName {1} needs an input of dimension "
-                f"{2} but received input of dimension {3}".format(
-                    agent_id, behavior_name, expected_shape, action.shape
-                )
+                f"The Agent {agent_id} with BehaviorName {behavior_name} needs "
+                f"an input of dimension {expected_shape} but received input of "
+                f"dimension {action.shape}"
             )
         expected_type = np.float32 if spec.is_action_continuous() else np.int32
         if action.dtype != expected_type:

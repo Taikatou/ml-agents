@@ -6,16 +6,10 @@ from typing import List, Optional
 
 
 def get_unity_executable_path():
-    UNITY_VERSION = os.environ["UNITY_VERSION"]
-    BOKKEN_UNITY = f"/Users/bokken/{UNITY_VERSION}/Unity.app/Contents/MacOS/Unity"
-    HUB_UNITY = (
-        f"/Applications/Unity/Hub/Editor/{UNITY_VERSION}/Unity.app/Contents/MacOS/Unity"
-    )
-    if os.path.exists(BOKKEN_UNITY):
-        return BOKKEN_UNITY
-    if os.path.exists(HUB_UNITY):
-        return HUB_UNITY
-    raise FileNotFoundError("Can't find bokken or hub executables")
+    downloader_install_path = "./.Editor/Unity.app/Contents/MacOS/Unity"
+    if os.path.exists(downloader_install_path):
+        return downloader_install_path
+    raise FileNotFoundError("Can't find executable from unity-downloader-cli")
 
 
 def get_base_path():
@@ -89,11 +83,12 @@ def find_executables(root_dir: str) -> List[str]:
     Try to find the player executable. This seems to vary between Unity versions.
     """
     ignored_extension = frozenset([".dll", ".dylib", ".bundle"])
+    ignored_files = frozenset(["macblas"])
     exes = []
     for root, _, files in os.walk(root_dir):
         for filename in files:
             file_root, ext = os.path.splitext(filename)
-            if ext in ignored_extension:
+            if ext in ignored_extension or filename in ignored_files:
                 continue
             file_path = os.path.join(root, filename)
             if os.access(file_path, os.X_OK):
@@ -136,8 +131,9 @@ def init_venv(
     if extra_packages:
         pip_commands += extra_packages
     for cmd in pip_commands:
+        pip_index_url = "--index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple"
         subprocess.check_call(
-            f"source {venv_path}/bin/activate; python -m pip install -q {cmd}",
+            f"source {venv_path}/bin/activate; python -m pip install -q {cmd} {pip_index_url}",
             shell=True,
         )
     return venv_path

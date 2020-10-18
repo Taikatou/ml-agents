@@ -18,11 +18,11 @@ from mlagents_envs.exception import UnityEnvironmentException
 from mlagents.trainers.tests.simple_test_envs import SimpleEnvironment
 from mlagents.trainers.stats import StatsReporter
 from mlagents.trainers.agent_processor import AgentManagerQueue
-from mlagents.trainers.tests.test_simple_rl import (
-    _check_environment_trains,
-    PPO_CONFIG,
+from mlagents.trainers.tests.check_env_trains import (
+    check_environment_trains,
     DebugWriter,
 )
+from mlagents.trainers.tests.dummy_config import ppo_dummy_config
 
 
 def mock_env_factory(worker_id):
@@ -166,7 +166,7 @@ class SubprocessEnvManagerTest(unittest.TestCase):
         }
         step_info = EnvironmentStep(step_info_dict, 0, action_info_dict, env_stats)
         step_mock.return_value = [step_info]
-        env_manager.advance()
+        env_manager.process_steps(env_manager.get_steps())
 
         # Test add_experiences
         env_manager._step.assert_called_once()
@@ -193,9 +193,9 @@ def test_subprocess_env_endtoend(num_envs):
         simple_env_factory, EngineConfig.default_config(), num_envs
     )
     # Run PPO using env_manager
-    _check_environment_trains(
+    check_environment_trains(
         simple_env_factory(0, []),
-        {"1D": PPO_CONFIG},
+        {"1D": ppo_dummy_config()},
         env_manager=env_manager,
         success_threshold=None,
     )
